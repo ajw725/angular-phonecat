@@ -19,6 +19,8 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$interval', fu
       // You can set scope here 
       boardData = data.results;
       $scope.workoutName = data.workoutTitle;
+      min = 0;
+      max = 10;
       $scope.leaders = boardData.slice( min, Math.min(max, boardData.length - 1) );
     })
     .error( function(data, status, headers, config) {
