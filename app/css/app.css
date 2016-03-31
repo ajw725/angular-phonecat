@@ -7,35 +7,61 @@ body {
   color: #333;
 }
 
+h1, h2, h3 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 5vh;
+}
+
 #pageTitle {
   text-align: center;
   background-color: #000;
   color: #fff;
-  font-family: 'Open Sans';
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #pageTitle h1 {
   margin-top: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 6vh;
+}
+
+#pageTitle h2 {
+  font-size: 5vh;
 }
 
 #main-content {
   padding-top: 120px;
 }
 
-.leader-row {
-  position: relative;
-  margin-bottom: 10px;
+.workout-summary {
+  text-align: center;
 }
 
-.profile-image {
-  width: 20em;
+.leader-row {
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 0.5px solid #000;
+  border-top: 3px solid #0a96c8;
+  box-shadow: 2px 5px 10px #888;
+}
+
+.leader-row .profile-image {
+  width: 8vh;
 }
 
 .rank, .rank a {
   margin-left: 10px;
-  font-size: 40px;
+  font-size: 4vh;
+}
+
+.rank {
+  vertical-align: middle;
+}
+
+.rank a {
+  color: #0a96c8;
 }

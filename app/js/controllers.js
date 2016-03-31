@@ -19,6 +19,8 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$interval', fu
       // You can set scope here 
       boardData = data.results;
       $scope.workoutName = data.workoutTitle;
+      $scope.date = new Date( data.date );
+      
       min = 0;
       max = 10;
       $scope.leaders = boardData.slice( min, Math.min(max, boardData.length - 1) );
@@ -31,10 +33,14 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$interval', fu
   function nextGroup() {
     if( max > boardData.length ) {
       $scope.leaders = boardData.slice( min, boardData.length - 1 );
+      $scope.minIdx = min + 1;
+      $scope.maxIdx = max;
       min = 0;
       max = step;
     } else {
       $scope.leaders = boardData.slice( min, max );
+      $scope.minIdx = min + 1;
+      $scope.maxIdx = max;
       min = max;
       max += step;
     }
