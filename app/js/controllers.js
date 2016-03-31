@@ -34,7 +34,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$interval', fu
     if( max > boardData.length ) {
       $scope.leaders = boardData.slice( min, boardData.length - 1 );
       $scope.minIdx = min + 1;
-      $scope.maxIdx = max;
+      $scope.maxIdx = boardData.length - 1;
       min = 0;
       max = step;
     } else {
