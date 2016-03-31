@@ -2,27 +2,21 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var ajwApp = angular.module('ajwApp', [
   'ngRoute',
-  'phonecatAnimations',
+  'ajwAnimations',
 
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'ajwControllers'
 ]);
 
-phonecatApp.config(['$routeProvider',
+ajwApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/leaderboard', {
+        templateUrl: 'partials/leaderboard.html',
+        controller: 'LeaderboardCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/leaderboard'
       });
   }]);

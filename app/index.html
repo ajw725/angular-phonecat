@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="ajwApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>TrainHeroic Leaderboard</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -18,9 +18,15 @@
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
 </head>
-<body>
+<body ng-controller="LeaderboardCtrl">
+  
+  <div id="header">
+    <div id="pageTitle">
+      <h2>{{ workoutName | lowercase }}</h2>
+    </div>
+  </div>
 
-  <div class="view-container">
+  <div id="main-content" class="view-container">
     <div ng-view class="view-frame"></div>
   </div>
 

@@ -1,6 +1,6 @@
-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+var ajwAnimations = angular.module('ajwAnimations', ['ngAnimate']);
 
-phonecatAnimations.animation('.phone', function() {
+ajwAnimations.animation('.leader-row', function() {
 
   var animateUp = function(element, className, done) {
     if(className != 'active') {
