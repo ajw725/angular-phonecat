@@ -37,13 +37,7 @@
           <h3>{{ minIdx }} - {{ maxIdx }}</h3>
     
           <div class="leader-row" ng-repeat="leader in leaders">
-            <img class="profile-image" ng-src="{{ leader.profileImg }}">
-            <span class="rank">
-              {{ leader.rank }}
-              <a ng-href="{{ leader.profileUrl }}" target="_blank">
-                {{ leader.userFirstName + ' ' + leader.userLastName }}
-              </a>
-            </span>
+            <leader-info leader="leader"></leader-info>
           </div> <!-- /.leader-row -->
     
         </div>
