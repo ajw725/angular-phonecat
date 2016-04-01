@@ -7,7 +7,8 @@ var min = 0;
 var max = 10;
 var step = 10;
 
-ajwControllers.controller('LeaderboardCtrl', function($scope, $http, $interval) {
+ajwControllers.controller('LeaderboardCtrl',
+                            function($scope, $http, $interval, $timeout) {
   var boardData = [];
   
   function updateBoard() {
@@ -32,7 +33,7 @@ ajwControllers.controller('LeaderboardCtrl', function($scope, $http, $interval) 
       console.log( 'oops' );
     });
     
-    $interval( updateBoard, 60000 );
+    $interval( nextGroup, 10000 );
   };
   
   function nextGroup() {
@@ -42,8 +43,7 @@ ajwControllers.controller('LeaderboardCtrl', function($scope, $http, $interval) 
       $scope.leaders = boardData.slice( min, max );
       $scope.minIdx = min + 1;
       $scope.maxIdx = max;
-      min = 0;
-      max = step;
+      $timeout( updateBoard, 10000 );
     } else {
       $scope.leaders = boardData.slice( min, max );
       $scope.minIdx = min + 1;
@@ -54,5 +54,5 @@ ajwControllers.controller('LeaderboardCtrl', function($scope, $http, $interval) 
   };
   
   updateBoard();
-  $interval( nextGroup, 10000 );
+  //$interval( nextGroup, 10000 );
 });
