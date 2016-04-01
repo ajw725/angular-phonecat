@@ -18,6 +18,7 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
 </head>
 <body ng-controller="LeaderboardCtrl">
   
@@ -29,8 +30,27 @@
   </div>
 
   <div id="main-content" class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h3>{{ minIdx }} - {{ maxIdx }}</h3>
+    
+          <div class="leader-row" ng-repeat="leader in leaders">
+            <img class="profile-image" ng-src="{{ leader.profileImg }}">
+            <span class="rank">
+              {{ leader.rank }}
+              <a ng-href="{{ leader.profileUrl }}" target="_blank">
+                {{ leader.userFirstName + ' ' + leader.userLastName }}
+              </a>
+            </span>
+          </div> <!-- /.leader-row -->
+    
+        </div>
+      </div> <!-- /.row -->
+      
+    </div> <!-- /.container -->
+  </div> <!-- /#main-content -->
 
 </body>
 </html>
