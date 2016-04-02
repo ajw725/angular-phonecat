@@ -20,31 +20,9 @@
   <script src="js/services.js"></script>
   <script src="js/directives.js"></script>
 </head>
-<body ng-controller="LeaderboardCtrl">
-  
-  <div id="header">
-    <div id="pageTitle">
-      <h1>Leaderboard for {{ date | date:'EEEE, MMM d, yyyy' }}</h1>
-      <h2>Workout: {{ workoutName }}</h2>
-    </div>
-  </div>
 
-  <div id="main-content" class="view-container">
-    <div class="container-fluid">
-
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h3>{{ minIdx }} - {{ maxIdx }}</h3>
-    
-          <div class="leader-row" ng-repeat="leader in leaders">
-            <leader-info leader="leader"></leader-info>
-          </div> <!-- /.leader-row -->
-    
-        </div>
-      </div> <!-- /.row -->
-      
-    </div> <!-- /.container -->
-  </div> <!-- /#main-content -->
-
+<body>
+  <div ng-view></div>
 </body>
+
 </html>
