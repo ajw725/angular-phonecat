@@ -15,7 +15,6 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$interval', '$timeout',
   function updateData() {
     updateBoard.success( function(data) {
       boardData = data.results;
-      $interval( nextGroup, 10000 );
       $scope.workoutName = data.workoutTitle;
       $scope.date = new Date( data.date );
       
