@@ -4,7 +4,8 @@
 
 var ajwApp = angular.module('ajwApp', [
   'ngRoute',
-  'ajwAnimations',
-
-  'ajwControllers'
+  'ajwControllers',
+  'ajwDirectives',
+  'ajwServices',
+  'ajwAnimations'
 ]);
