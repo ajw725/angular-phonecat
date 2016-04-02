@@ -5,10 +5,7 @@
 var ajwServices = angular.module( 'ajwServices', ['ngResource'] );
 
 ajwServices.factory( 'updateBoard', ['$http', function($http) {
-  return $http({
-    url: 'https://apis.trainheroic.com/public/leaderboard/468425',
-    method: 'GET'
-  })
+  return $http.get( 'https://apis.trainheroic.com/public/leaderboard/468425' )
     .success( function(data) {
       return data;
     })
