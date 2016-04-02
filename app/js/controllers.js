@@ -25,7 +25,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$interval', '$timeout',
       $scope.maxIdx = Math.min( max, boardData.length - 1 );
       
       $scope.leaders = boardData.slice( min, $scope.maxIdx );
-      $interval( nextGroup, 10000 );
+      nextGroup();
     });
   };
   
@@ -42,6 +42,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$interval', '$timeout',
       $scope.maxIdx = max;
       min = max;
       max += step;
+      $timeout( nextGroup, 10000 );
     }
   };
   
