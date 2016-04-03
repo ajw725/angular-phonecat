@@ -18,9 +18,11 @@
 .leader-row.ng-leave {
   opacity: 0.5;
   top: -100vh;
+  z-index: 0;
 }
 
 .leader-row.ng-leave-active {
   opacity: 0;
   top: -200vh;
+  z-index: -100;
 }
