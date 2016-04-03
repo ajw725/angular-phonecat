@@ -1,6 +1,13 @@
 <img class="profile-image" ng-src="{{ leader.profileImg }}">
 <span class="rank">
   {{ leader.rank }}
+</span>
+
+<span class="{{ leader.rankClass }}">
+  ({{ leader.rankChange }})
+</span>
+
+<span class="leader-name">
   <a ng-href="{{ leader.profileUrl }}" target="_blank">
     {{ leader.userFirstName + ' ' + leader.userLastName }}
   </a>

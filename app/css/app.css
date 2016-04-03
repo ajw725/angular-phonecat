@@ -15,6 +15,14 @@ h3 {
   font-size: 5vh;
 }
 
+h4 {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
 #pageTitle {
   text-align: center;
   background-color: #000;
@@ -34,7 +42,7 @@ h3 {
 }
 
 #main-content {
-  padding-top: 120px;
+  padding-top: 50px;
 }
 
 .workout-summary {
@@ -53,15 +61,29 @@ h3 {
   width: 8vh;
 }
 
-.rank, .rank a {
+.rank, .leader-name {
+  vertical-align: middle;
   margin-left: 10px;
   font-size: 4vh;
 }
 
-.rank {
-  vertical-align: middle;
+.leader-name a {
+  color: #0a96c8;
 }
 
-.rank a {
-  color: #0a96c8;
+.rank-change, .rank-change-up, .rank-change-down {
+  vertical-align: middle;
+  font-size: 3vh;
+}
+
+.rank-change {
+  color: #888;
+}
+
+.rank-change-up {
+  color: #0f0;
+}
+
+.rank-change-down {
+  color: #f00;
 }

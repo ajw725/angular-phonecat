@@ -10,6 +10,17 @@
     
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
+        <div class="well well-special">
+          <h4 class="center">Tests</h4>
+            <p class="center" ng-repeat="test in tests">
+              Test {{ test.title }} (type {{ test.testType }}): {{ test.testInstructions }}
+            </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
         <h3>{{ minIdx }} - {{ maxIdx }}</h3>
         
         <div class="leader-row" ng-repeat="leader in leaders">
