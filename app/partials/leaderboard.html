@@ -13,7 +13,8 @@
         <div class="well well-special">
           <h4 class="center">Tests</h4>
             <p class="center" ng-repeat="test in tests">
-              Test {{ test.title }} (type {{ test.testType }}): {{ test.testInstructions }}
+              Test {{$index+1}}: {{ test.title }} (type {{ test.testType }})
+              - {{ test.testInstructions }}
             </p>
         </div>
       </div>
@@ -23,7 +24,7 @@
       <div class="col-md-10 col-md-offset-1">
         <h3>{{ minIdx }} - {{ maxIdx }}</h3>
         
-        <div class="leader-row" ng-repeat="leader in leaders">
+        <div class="row leader-row" ng-repeat="leader in leaders">
           <leader-info leader="leader"></leader-info>
         </div> <!-- /.leader-row -->
         

@@ -58,7 +58,8 @@ h4 {
 }
 
 .leader-row .profile-image {
-  width: 8vh;
+  min-width: 8vh;
+  max-width: 10vh;
 }
 
 .rank, .leader-name {
@@ -86,4 +87,10 @@ h4 {
 
 .rank-change-down {
   color: #f00;
+}
+
+.test-row {
+  vertical-align: middle;
+  margin: auto;
+  font-size: 2vh;
 }

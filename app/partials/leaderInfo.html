@@ -1,14 +1,24 @@
-<img class="profile-image" ng-src="{{ leader.profileImg }}">
-<span class="rank">
-  {{ leader.rank }}
-</span>
+<div class="col-md-8">
+  <img class="profile-image" ng-src="{{ leader.profileImg }}">
+  
+  <span class="rank">
+    {{ leader.rank }}
+  </span>
+  
+  <span class="{{ leader.rankClass }}">
+    ({{ leader.rankChange }})
+  </span>
+  
+  <span class="leader-name">
+    <a ng-href="{{ leader.profileUrl }}" target="_blank">
+      {{ leader.userFirstName + ' ' + leader.userLastName }}
+    </a>
+  </span>
+</div>
 
-<span class="{{ leader.rankClass }}">
-  ({{ leader.rankChange }})
-</span>
-
-<span class="leader-name">
-  <a ng-href="{{ leader.profileUrl }}" target="_blank">
-    {{ leader.userFirstName + ' ' + leader.userLastName }}
-  </a>
-</span>
+<div class="col-md-4" style="margin: 10px auto">
+  <div class="row test-row" ng-repeat="test in leader.tests">
+    Test {{$index+1}}: {{ test }}
+    <br/>
+  </div>
+</div>
