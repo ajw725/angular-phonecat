@@ -7,6 +7,7 @@ var ajwControllers = angular.module('ajwControllers', []);
 var min = 0;
 var max = 10;
 var step = 10;
+
 var boardData = [];
 
 ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
@@ -21,11 +22,9 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
         
         min = 0;
         max = 10;
-        
         $scope.minIdx = min + 1;
         $scope.maxIdx = Math.min( max, boardData.length - 1 );
         
-        $scope.leaders = boardData.slice( min, $scope.maxIdx );
         nextGroup();
       })
       .error( function(err) {

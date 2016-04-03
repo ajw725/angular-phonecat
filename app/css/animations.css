@@ -1,1 +1,26 @@
 /* animations */
+
+.ng-enter, .ng-move, .ng-leave {
+  transition: 1s linear all;
+  position: relative;
+}
+
+.leader-row.ng-enter {
+  opacity: 0;
+  top: 100vh;
+}
+
+.leader-row.ng-enter-active {
+  opacity: 1;
+  top: 0;
+}
+
+.leader-row.ng-leave {
+  opacity: 0.5;
+  top: -100vh;
+}
+
+.leader-row.ng-leave-active {
+  opacity: 0;
+  top: -200vh;
+}
