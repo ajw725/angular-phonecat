@@ -21,6 +21,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
         oldRanks = newRanks;
         newRanks = {};
         boardData = data.results;
+        $scope.nAthletes = boardData.length;
         
         for( var i = 0; i < boardData.length; i++ ) {
           var leader = boardData[i];

@@ -11,7 +11,12 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="well well-special">
-          <h4 class="center">Tests</h4>
+          <h4 class="center">
+            Total Athletes: {{ nAthletes }}
+          </h4>
+          <h4 class="center">
+            Total Tests: {{ tests.length }}
+          </h4>
             <p class="center" ng-repeat="test in tests">
               Test {{$index+1}}: {{ test.title }} (type {{ test.testType }})
               - {{ test.testInstructions }}
