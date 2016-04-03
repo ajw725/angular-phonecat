@@ -51,7 +51,16 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
       
       for( var i = 0; i < $scope.leaders.length; i++ ) {
         var leader = $scope.leaders[i];
-        $scope.leaders[i].rankChange = rankChange( leader.username );
+        var change = rankChange( leader.username );
+        if( change > 0 ) {
+          $scope.leaders[i].rankChange = '+' + change.toString();
+          $scope.leaders[i].rankClass = "rank-change-up";
+        } else if( change < 0 ) {
+          $scope.leaders[i].rankChange = '-' + change.toString();
+          $scope.leaders[i].rankClass = "rank-change-down";
+        } else {
+          $scope.leaders[i].rankChange = '+0';
+        }
       }
       
       $scope.minIdx = min + 1;
