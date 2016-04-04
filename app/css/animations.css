@@ -16,13 +16,13 @@
 }
 
 .leader-row.ng-leave {
-  opacity: 0.5;
-  top: -100vh;
+  opacity: 1;
+  top: -51vh;
   z-index: 0;
 }
 
 .leader-row.ng-leave-active {
   opacity: 0;
-  top: -200vh;
+  top: -151vh;
   z-index: -100;
 }

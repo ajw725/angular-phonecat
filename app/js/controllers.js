@@ -34,9 +34,6 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
         
         min = 0;
         max = 10;
-        $scope.minIdx = min + 1;
-        $scope.maxIdx = Math.min( max, boardData.length - 1 );
-        
         nextGroup();
       })
       .error( function(err) {
@@ -50,19 +47,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
       max = boardData.length;
       $scope.leaders = boardData.slice( min, max );
       
-      for( var i = 0; i < $scope.leaders.length; i++ ) {
-        var leader = $scope.leaders[i];
-        var change = rankChange( leader.username );
-        if( change > 0 ) {
-          $scope.leaders[i].rankChange = '+' + change.toString();
-          $scope.leaders[i].rankClass = "rank-change-up";
-        } else if( change < 0 ) {
-          $scope.leaders[i].rankChange = '-' + change.toString();
-          $scope.leaders[i].rankClass = "rank-change-down";
-        } else {
-          $scope.leaders[i].rankChange = '+0';
-        }
-      }
+      calculateChanges();
       
       $scope.minIdx = min + 1;
       $scope.maxIdx = max;
@@ -70,20 +55,7 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
     } else {
       $scope.leaders = boardData.slice( min, max );
       
-      for( var i = 0; i < $scope.leaders.length; i++ ) {
-        var leader = $scope.leaders[i];
-        var change = rankChange( leader.username );
-        if( change > 0 ) {
-          $scope.leaders[i].rankChange = '+' + change.toString();
-          $scope.leaders[i].rankClass = "rank-change-up";
-        } else if( change < 0 ) {
-          $scope.leaders[i].rankChange = '-' + change.toString();
-          $scope.leaders[i].rankClass = "rank-change-down";
-        } else {
-          $scope.leaders[i].rankChange = '+0';
-          $scope.leaders[i].rankClass = "rank-change";
-        }
-      }
+      calculateChanges();
       
       $scope.minIdx = min + 1;
       $scope.maxIdx = max;
@@ -92,6 +64,23 @@ ajwControllers.controller('LeaderboardCtrl', ['$scope', '$http', '$timeout',
       $timeout( nextGroup, 10000 );
     }
   };
+  
+  function calculateChanges() {
+    for( var i = 0; i < $scope.leaders.length; i++ ) {
+      var leader = $scope.leaders[i];
+      var change = rankChange( leader.username );
+      if( change > 0 ) {
+        $scope.leaders[i].rankChange = '+' + change.toString();
+        $scope.leaders[i].rankClass = "rank-change-up";
+      } else if( change < 0 ) {
+        $scope.leaders[i].rankChange = '-' + change.toString();
+        $scope.leaders[i].rankClass = "rank-change-down";
+      } else {
+        $scope.leaders[i].rankChange = '+0';
+        $scope.leaders[i].rankClass = "rank-change";
+      }
+    }
+  }
   
   function rankChange( username ) {
     if( username in oldRanks && username in newRanks ) {

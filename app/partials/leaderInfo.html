@@ -1,6 +1,6 @@
-<div class="col-md-8" style="padding-left: 0">
-  <img class="profile-image" ng-src="{{ leader.profileImg }}">
-  
+<img class="profile-image" ng-src="{{ leader.profileImg }}">
+
+<div class="leader-info-general">
   <span class="rank">
     {{ leader.rank }}
   </span>
@@ -16,9 +16,6 @@
   </span>
 </div>
 
-<div class="col-md-4" style="margin: 10px auto">
-  <div class="row test-row" ng-repeat="test in leader.tests">
-    Test {{$index+1}}: {{ test }}
-    <br/>
-  </div>
-</div>
+<span class="test-result" ng-repeat="test in leader.tests">
+  Test {{ $index + 1 }}: {{ test }}
+</span>
